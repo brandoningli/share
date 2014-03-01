@@ -18,7 +18,6 @@ grades = [gradea, gradeb, gradec, graded, gradef]
 classg = input("What is the Letter Grade for this class? ")
 classw = input("Is Class Weighted? y/n ")
 if classw == 'y':
-    weighted = "Yes"
     for grade in wgrades:
         if classg == grade.grade:
             grade = grade.points
@@ -26,11 +25,10 @@ if classw == 'y':
         else:
             grade = "nada"
 if classw == 'n':
-    weighted = "No"
     for grade in grades:
         if classg == grade.grade:
             grade = grade.points
             break
         else:
-            grade = "nadareg"
+            grade = "nada"
 print("This Class Earns ", grade, "GPA Points")
