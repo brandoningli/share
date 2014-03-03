@@ -14,7 +14,7 @@ Description of Files:
 ====
 trianglesolve.py is the code in python3 format. If you have Python 3.3 installed, you can download and run this code.
 
-trianglesolve.zip contains a windows executable form of the program for those who don't have python 3.3
+trianglesolve.zip contains a windows executable form of the program for those who don't have python 3.3. **To Download ZIP:** Click on the "Raw" button or the "View Raw" link to download the zip file.
 
 Enjoy!
 
