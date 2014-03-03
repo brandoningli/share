@@ -4,13 +4,13 @@ This is a script written in the python 3 programming language to guide the user 
 to) find a missing side or angle in a triangle.
 
 
-Concepts used:
+Geometric Concepts
 ====
-Triangle=180, Pythagorean Thm, Right Triangle Trig (Sin Cos Tan), Law of Sines, Law of Cosines
+Concepts used in the program: Triangle=180, Pythagorean Thm, Right Triangle Trig (Sin Cos Tan), Law of Sines, Law of Cosines
 
 Concepts not used in the program that should be looked for to solve for a side: Geometric Mean
 
-Description of Files:
+Description of Files
 ====
 trianglesolve.py is the code in python3 format. If you have Python 3.3 installed, you can download and run this code.
 
