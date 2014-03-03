@@ -81,7 +81,7 @@ def angle():
                 lawcos = input("Do you have all 3 sides? y/n: ")
                 if lawcos == "Y" or lawcos == "y":
                     print("Use the Law of Cosines: a^2 = b^2 + c^2 - 2(b)(c)(Cos A)")
-                    solvelawcos = input("Start Law of Cosine Solver? (NOTE: You must setup your equation so that the side opposite the angle you want to find is 'a' in the above equation to use the solver) y/n: ")
+                    solvelawcos = input("Start Law of Cosine Solver? (NOTE: You must setup your equation so that the angle you want to find is 'A' in the above equation to use the solver) y/n: ")
                     if solvelawcos == "Y" or solvelawcos == "y":
                         lawcosangle()
                 if lawcos == "N" or lawcos == "n":
