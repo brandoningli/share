@@ -2,6 +2,7 @@ TriangleSolve
 ====
 This is a script written in the python 3 programming language to guide the user to (and in most cases launches a solver 
 to) find a missing side or angle in a triangle.
+**End User Assumes all risk**
 
 
 Geometric Concepts
@@ -18,4 +19,4 @@ trianglesolve.zip contains a windows executable form of the program for those wh
 
 Enjoy!
 
-**This program is free to use, but cannot be included in anything without express written permission**
+**This program is free to use, but cannot be distributed in anything without express written permission**
