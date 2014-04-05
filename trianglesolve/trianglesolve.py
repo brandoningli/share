@@ -1,7 +1,7 @@
 import math
 def main():
     print("TRIANGLE SOLVER")
-    print("CREATED BY BRANDON INGLI")
+    print("CREATED BY BRANDON I.")
     print("-----------------------------")
     sideorangle = input("Are you looking for a side or angle? s/a: ")
     if sideorangle == "S" or sideorangle == "s":
