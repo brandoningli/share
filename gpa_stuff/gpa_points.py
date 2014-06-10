@@ -22,7 +22,6 @@ def gpapoints(letter, weight):
     grades = [gradea, gradeb, gradec, graded, gradef]
 
     if weight == 'y':
-        weighted = "Yes"
         for grade in wgrades:
             if letter == grade.grade:
                 gpa = grade.points
@@ -30,7 +29,6 @@ def gpapoints(letter, weight):
             else:
                 gpa = 0
     if weight == 'n':
-        weighted = "No"
         for grade in grades:
             if letter == grade.grade:
                 gpa = grade.points
