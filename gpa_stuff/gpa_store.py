@@ -10,8 +10,8 @@ def function():
     print("")
 
 def userinput():
+    global classnum
     while True:
-        global classnum
         classnum = input("How many classes? ")
         try:
             classnum = int(classnum)
