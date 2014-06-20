@@ -1,0 +1,16 @@
+SEE https://github.com/lhartikk/ArnoldC FOR KEYWORDS
+
+WRITE A FILE WITH EXTENTION .arnoldc
+
+FOR EXAMPLE OUR FILE IS example.arnoldc
+
+MOVE TO THE DIRECTORY WHERE YOUR .jar AND .arnoldc ARE LOCATED
+
+COMPILE BY RUNNING:
+
+java -jar ArnoldC.jar example.arnoldc
+
+
+RUN THE PROGRAM WITH:
+
+java example
