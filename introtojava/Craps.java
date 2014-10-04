@@ -23,13 +23,14 @@ public class Craps
         playCraps();
     }
     public static void playCraps(){
+       Scanner p = new Scanner(System.in);
        amtToBet = bank;
        System.out.print("Do you want to make a [P]ass or [D]on't Pass Bet? ");
-       String input = s.nextLine();
+       String input = p.nextLine();
        char passyn = input.charAt(0);
        while (passyn != 'p' && passyn != 'P' && passyn != 'D' && passyn != 'd'){
            System.out.println("Try Again.");
-           input = s.nextLine();
+           input = p.nextLine();
            passyn = input.charAt(0);
         }
        if (passyn == 'P' || passyn == 'p'){
@@ -257,6 +258,7 @@ public class Craps
         if (pass==true){
             payout = passBetAmt;
             bank = bank + payout;
+            amtToBet = bank;
             System.out.println("You won the pass bet with a roll of "+point+".");
             System.out.println("Your bank is now "+rnd.format(bank));
             playAgain();
@@ -274,6 +276,7 @@ public class Craps
         if (pass==false){
             payout = passBetAmt;
             bank = bank + payout;
+            amtToBet = bank;
             System.out.println("You won the don't pass bet with a roll of "+point+".");
             System.out.println("Your bank is now "+rnd.format(bank));
             playAgain();
@@ -397,7 +400,7 @@ public class Craps
             }
             if (passyn1 == 'y' || passyn1 == 'Y'){
                 playagain = true;
-                s.nextLine();
+                counter = 0;
                 main(null);
                 return;
             }
@@ -407,11 +410,12 @@ public class Craps
             }
         }
         else{
-        System.out.print("Play Again? Yes/No: ");
+        System.out.print("\nPlay Again? Yes/No: ");
         String input = t.nextLine();
         char yn = input.charAt(0);
         if (yn == 'Y' || yn == 'y'){
             counter = 0;
+            System.out.print("\n\nYour Bank: "+rnd.format(bank)+"\n");
             playCraps();
         }
         else if (yn == 'N' || yn == 'n'){
