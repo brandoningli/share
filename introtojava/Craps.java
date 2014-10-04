@@ -7,7 +7,7 @@ public class Craps
    static Scanner s = new Scanner(System.in);
    static int counter = 0;
    static int point = 0;
-   static boolean pass, morebet = true, playagain=false;
+   static boolean pass, morebet = true;
    static double[] placeBetAmounts = {0, 0, 0, 0, 0, 0};
    static NumberFormat rnd = NumberFormat.getCurrencyInstance();
    static Random r = new Random();
@@ -399,7 +399,6 @@ public class Craps
                 passyn1 = input1.charAt(0);
             }
             if (passyn1 == 'y' || passyn1 == 'Y'){
-                playagain = true;
                 counter = 0;
                 main(null);
                 return;
@@ -414,7 +413,7 @@ public class Craps
         String input = t.nextLine();
         char yn = input.charAt(0);
         if (yn == 'Y' || yn == 'y'){
-            counter = 0;
+            reset();
             System.out.print("\n\nYour Bank: "+rnd.format(bank)+"\n");
             playCraps();
         }
@@ -434,6 +433,10 @@ public class Craps
             Thread.sleep(x);
         } catch(InterruptedException e) {
         } 
+    }
+    public static void reset(){
+        counter = 0;
+        Arrays.fill(placeBetAmounts, 0);
     }
     }
 
