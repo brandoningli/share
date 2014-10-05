@@ -29,7 +29,7 @@ public class Craps
        String input = p.nextLine();
        char passyn = input.charAt(0);
        while (passyn != 'p' && passyn != 'P' && passyn != 'D' && passyn != 'd'){
-           System.out.println("Try Again.");
+           System.out.println("Try Again.\nDo you want to make a [P]ass or [D]on't Pass Bet? ");
            input = p.nextLine();
            passyn = input.charAt(0);
         }
@@ -319,7 +319,7 @@ public class Craps
        String input = s.nextLine();
        char passyn = input.charAt(0);
        while (passyn != 'y' && passyn != 'Y' && passyn != 'n' && passyn != 'N'){
-           System.out.println("Try Again.");
+           System.out.println("Try Again.\nDo you want to make a Place Bet [Y/N]? ");
            input = s.nextLine();
            passyn = input.charAt(0);
         }
@@ -336,7 +336,7 @@ public class Craps
                 String input1 = s.nextLine();
                 passyn1 = input1.charAt(0);
                 while (passyn1 != 'y' && passyn1 != 'Y' && passyn1 != 'n' && passyn1 != 'N'){
-                    System.out.println("Try Again.");
+                    System.out.println("Try Again.\nDo you want to make another Place Bet [Y/N]? ");
                     input1 = s.nextLine();
                     passyn1 = input.charAt(0);
                 }
@@ -394,7 +394,7 @@ public class Craps
             String input1 = t.nextLine();
             char passyn1 = input1.charAt(0);
             while (passyn1 != 'y' && passyn1 != 'Y' && passyn1 != 'n' && passyn1 != 'N'){
-                System.out.println("Try Again.");
+                System.out.println("Try Again.\nCash in more? Yes/No: ");
                 input1 = s.nextLine();
                 passyn1 = input1.charAt(0);
             }
