@@ -12,7 +12,7 @@ public class Craps
    static NumberFormat rnd = NumberFormat.getCurrencyInstance();
    static Random r = new Random();
    public static void main(String args[]){
-       System.out.print("What how much money are you bringing to the table? $");
+       System.out.print("How much money are you bringing to the table? $");
        bank = s.nextDouble();
        while (bank <= 0){
            System.out.println("You need to bring some cash to play.");
@@ -414,6 +414,26 @@ public class Craps
         char yn = input.charAt(0);
         if (yn == 'Y' || yn == 'y'){
             reset();
+            System.out.print("Add money to the bank? ");
+            String input1 = t.nextLine();
+            char yn1 = input1.charAt(0);
+            while(yn1 != 'Y' && yn1 != 'y' && yn1 != 'N' && yn1 != 'n'){
+                System.out.println("Try Again.");
+                System.out.print("Add money to the bank? ");
+                input1 = t.nextLine();
+                yn1 = input1.charAt(0);
+            }
+            if (yn1 == 'Y' || yn1 == 'y'){
+                System.out.print("How much money are you bringing to the table? $");
+                double addbank = t.nextDouble();
+                while (addbank < 0){
+                    System.out.println("You need to bring some cash to add.");
+                    System.out.print("How much money are you bringing to the table? $");
+                    addbank = t.nextDouble();
+                }
+                bank += addbank;
+                t.nextLine();
+            }
             System.out.print("\n\nYour Bank: "+rnd.format(bank)+"\n");
             playCraps();
         }
