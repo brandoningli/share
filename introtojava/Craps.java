@@ -1,3 +1,31 @@
+/*
+ * CRAPS GAME
+ * By Brandon Ingli
+ * 2014 Intro to Java, 1st Semester, Frankenberger
+ * 
+ * This program is designed to simulate the casino game CRAPS.
+ * 
+ * Basic Procedure:
+ * 
+ * 1) Get Bank
+ * 2) Make a Pass/Don't Pass Bet
+ * **Roll The Dice**
+ * If 7 or 11 => Pass => Payout => STOP
+ * If 2, 3, or 12 => Don't Pass => Payout => STOP
+ * Otherwise, roll becomes point => Continue
+ * 
+ * 3) Make a Place Bet(s)
+ * 
+ * 4) Make a single roll bet
+ * **Roll the Dice**
+ * 5) Payout Single Roll Bet
+ * 6) If roll is 7 => Don't Pass => Payout => STOP
+ * 7) Payout Place Bet(s)
+ *   If roll is point => Pass => Payout => STOP
+ *   Otherwise, roll again [back to 4]
+ * 
+ */
+
 import java.util.*;
 import java.text.*;
 public class Craps
@@ -23,6 +51,7 @@ public class Craps
         playCraps();
     }
     public static void playCraps(){
+        /* Starts the game of CRAPS*/
        Scanner p = new Scanner(System.in);
        amtToBet = bank;
        System.out.print("Do you want to make a [P]ass or [D]on't Pass Bet? ");
@@ -58,25 +87,30 @@ public class Craps
        playRoll();
     }
     public static double getPassBet(){
+        /* Gets a bet for the game */
         System.out.print("What will you wager? $");
         double bet = s.nextDouble();
         return bet;
     }
     public static int getSingleBet(){
+        /* Gets a single bet option for the game */
         System.out.print("Pick a single roll bet: [0=none, 1='any 7', 2='any craps', 3='double ones', 4 = 'three', 5 = 'eleven', 6 = 'double six']: ");
         int selection = s.nextInt();
         return selection;
     }
     public static double getSingleBetAmount(){
+        /* Gets a single bet for the game */
         System.out.print("How much to bet on a single roll? $");
         double amount = s.nextDouble();
         return amount;
     }
     public static int rollDie(){
+        /* Rolls a virtual die */
         int result = r.nextInt(6) + 1;
         return result;
     }
     public static void playRoll(){
+        /* Plays a round of CRAPS */
         counter++;
         System.out.print("\n\n");
         boolean singleBet = false;
@@ -143,6 +177,7 @@ public class Craps
         
     }
     public static void payoutPassPoint(boolean pass1){
+        /*Payout*/
         if (pass == pass1){
             double payout = passBetAmt + passBetAmt;
             System.out.println("You won the pass/don't pass bet!");
@@ -153,6 +188,7 @@ public class Craps
         }
     }
     public static void payoutPlaceBets(int roll){
+        /*Payout*/
         if(placeBetAmounts[0] != 0 && roll == 4){
                 double payout4 = ((placeBetAmounts[0] * 9) / 5) + placeBetAmounts[0];
                 System.out.println("You won the place bet of 4, paying 9 to 5.");
@@ -186,6 +222,7 @@ public class Craps
         
     }
     public static void payoutSingleBet(int betType, double betAmt, int roll){
+        /*Payout*/
         double payout;
         if (betType == 1){
             if (roll == 7){
@@ -254,6 +291,7 @@ public class Craps
         }
     }
     public static void payoutPass(){
+        /*Payout*/
         double payout = 0;
         if (pass==true){
             payout = passBetAmt;
@@ -272,6 +310,7 @@ public class Craps
         }
     }
      public static void payoutDontPass(){
+         /*Payout*/
         double payout = 0;
         if (pass==false){
             payout = passBetAmt;
@@ -290,6 +329,7 @@ public class Craps
         }
     }
     public static void playFirstRoll(){
+        /* Plays the First Roll of CRAPS */
         char result;
         System.out.println("Here we go!");
         sleep();
@@ -313,6 +353,7 @@ public class Craps
         }
     }
     public static void placeBet(){
+        /* Facilitates the retrieval of Place Bets */
        if(amtToBet > 0){
        System.out.print("Do you want to make a Place Bet [Y/N]? ");
        s.nextLine();
@@ -361,6 +402,7 @@ public class Craps
         
     }
     public static void makePlaceBet(){
+        /* Facilitates the retrieval of one place bet to give back to placeBet() */
          System.out.print("Pick a place bet [4, 5, 6, 8, 9, or 10]:  ");
          int pickPlaceBet = s.nextInt();
          while (pickPlaceBet != 4 && pickPlaceBet != 5 && pickPlaceBet != 6 && pickPlaceBet != 8 && pickPlaceBet != 9 && pickPlaceBet != 10){
@@ -388,6 +430,7 @@ public class Craps
     }
     
     public static void playAgain(){
+        /*Asks user to play again*/
         Scanner t = new Scanner(System.in);
         if (amtToBet <= 0){
             System.out.print("You do not have the funds to play another game. Cash in more? Yes/No: ");
@@ -448,6 +491,7 @@ public class Craps
     }
     }
     public static void sleep(){
+        /* Pauses the game a random amount of time from 5-9 seconds */
         int x = (r.nextInt(5)+5)*1000; 
         try {
             Thread.sleep(x);
@@ -455,6 +499,7 @@ public class Craps
         } 
     }
     public static void reset(){
+        /* Resets the counter and placeBets for a new round */
         counter = 0;
         Arrays.fill(placeBetAmounts, 0);
     }
